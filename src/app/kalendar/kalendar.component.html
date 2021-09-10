@@ -1,0 +1,70 @@
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<h1 style="font-weight: lighter;">TODAY:</h1>
+
+<div style="width: 800px;margin-left: 300px;">
+  <ul class="list-group" *ngFor="let meeting of meetings; let i = index">
+  	<li class="list-group-item" style="margin-left: -110px; margin-top:8px; border: 0; position: absolute;"><h2><b>{{meeting.time}}</b></h2></li>
+    <li class="list-group-item" style="border-top: 0; border-left: 0; border-right: 0;font-weight: bold;">{{meeting.name}}<i style="float: right; color: red;" class="fa fa-minus-square" (click)="delete(i)"></i></li>
+    <li class="list-group-item" style="border-left: 0; border-right: 0"><i class="fa fa-plane"></i> {{meeting.location}}</li>
+    <li class="list-group-item" style="border:0; margin-left: -90px; background-color: #D3D3D3;">{{meeting.description}}</li>
+  </ul>
+</div>
+<button style="margin-left: 600px;margin-top: 20px;" type="button" class="btn btn-info" (click)="open(content)">ADD EVENT</button>
+
+<div class="container" style="margin-left: 1200px;margin-top: -350px;">
+
+            <h3>SCHEDULE</h3>
+       
+                <p>It's going to be bussy that today. You have <strong>{{eventsNumber}} events</strong> today.</p>
+  
+                        <h1>{{main}}</h1>
+          
+                        <h1>{{celsius}} °C</h1>
+        
+                <p>Don't forget your sunglasses. Today will dry and sunny,<br> becoming warm in the afternoon with temperatures of<br> between {{temp_min}} and {{temp_max}} degrees.
+                </p>
+            </div>
+     
+            <ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New event</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    
+      <div class="form-group">
+        
+        <div class="input-group">       	
+     <table>
+     	
+  <tr><td><label for="usr">Time:</label></td>
+  <td><input type="text" class="form-control" id="usr" [(ngModel)]="eventTime"></td></tr><br>
+
+
+  <tr><td><label for="pwd">Event name:</label></td>
+  <td><input type="text" class="form-control" id="pwd" [(ngModel)]="eventName"></td></tr><br>
+
+  <tr><td><label for="pwd">Location:</label></td>
+  <td><input type="text" class="form-control" id="pwd" [(ngModel)]="eventLocation"></td></tr><br>
+
+  <tr><td><label for="pwd">Description:</label></td>
+  <td><input type="text" class="form-control" id="pwd" [(ngModel)]="eventDesc"></td></tr>
+</table>         
+        </div>
+      </div>
+    
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="add()">Ok</button>
+  </div>
+  
+</ng-template>
+
+
+
+<!-- <hr> -->
+
+ 
