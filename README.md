@@ -1,3 +1,7 @@
+COLLEGE PROJECT
+
+Basic Angular app to add, read and delete data from table.
+
 # Angular calendar App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
