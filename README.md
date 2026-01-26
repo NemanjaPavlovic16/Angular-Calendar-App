@@ -1,6 +1,6 @@
 COLLEGE PROJECT
 
-Basic Angular app to add, read and delete data from table.
+Basic Angular app to add, read, and delete data from a table.
 
 # Angular calendar App
 
